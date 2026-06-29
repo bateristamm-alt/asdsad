@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- META -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Arcangelmg-Editor de vídeos" />
+    <meta
+      name="keywords"
+      content="Edición, Vídeos, Editor, Premiere, Aftereffects, Motion Graphics, Freelancer, Venezuela, Independiente"
+    />
+    <meta name="author" content="Tanvir Hossain" />
+    <!-- PAGE TITLE -->
+    <title>Arcangelmg - Editor de vídeos</title>
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.png" />
+
+    <!-- FONT AWESOME CSS -->
+    <link rel="stylesheet" href="assets/css/font-awesome-pro.css" />
+    <!-- FONT AWESOME CSS -->
+    <link rel="stylesheet" href="assets/fonts/remixicon.css" />
+    <!-- MAGNIFIC CSS -->
+    <link rel="stylesheet" href="assets/css/magnific-popup.css" />
+    <!-- NICE SELECT CSS -->
+    <link rel="stylesheet" href="assets/css/nice-select.min.css" />
+    <!-- ANIMATE CSS -->
+    <link rel="stylesheet" href="assets/css/animate.min.css" />
+    <!-- MOBILE MENU CSS -->
+    <link rel="stylesheet" href="assets/css/mobilemenu.css" />
+    <!-- SLICK CSS -->
+    <link rel="stylesheet" href="assets/css/slick.min.css" />
+    <!-- SPACING CSS -->
+    <link rel="stylesheet" href="assets/css/spacing.css" />
+    <!-- MAIN STYLE CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  <link href="style.css" rel="stylesheet"></head>
+
+  <body class="overflow-x-hidden bg-bodyBackground font-normal text-greyBg">
+    <!-- START PRELOADER AREA-->
+    <div
+      class="preloader fixed left-0 top-0 z-[99999999999999] flex h-[100vh] w-full items-center justify-center overflow-hidden bg-transparent"
+    >
+      <svg
+        class="absolute top-0 h-[110vh] w-[100vw] fill-bodyBackground"
+        viewbox="0 0 1000 1000"
+        preserveaspectratio="none"
+      >
+        <path
+          id="preloaderSvg"
+          d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"
+        ></path>
+      </svg>
+      <div class="preloader-heading">
+        <div
+          class="load-text z-20 text-xl font-extralight uppercase tracking-[15px]"
+        >
+          <span>C</span>
+          <span>a</span>
+          <span>r</span>
+          <span>g</span>
+          <span>a</span>
+          <span>n</span>
+           <span>d</span>
+          <span>o</span>  
+                   
+        </div>
+      </div>
+    </div>
+    <!-- END PRELOADER AREA -->
+    <!-- START SCROOL UP DESIGN AREA -->
+    <div
+      class="progress-wrap fixed bottom-[30px] right-[30px] z-50 block size-11 cursor-pointer rounded-[50px]"
+    >
+      <i
+        class="ri-arrow-up-s-line absolute left-[10px] top-2 text-center text-[25px]"
+      ></i>
+      <svg
+        class="progress-circle svg-content"
+        width="100%"
+        height="100%"
+        viewBox="-1 -1 102 102"
+      >
+        <path
+          d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"
+          class="fill-none stroke-[#ddd] stroke-[4] duration-500"
+        />
+      </svg>
+    </div>
+    <!-- / END SCROOL UP DESIGN AREA -->
+    <!-- START MAGIC CURSOR AND BALL AREA-->
+    <div
+      id="magic-cursor"
+      class="pointer-events-none absolute left-0 top-0 z-[10000] h-[30px] w-[30px] delay-500 duration-200 ease-in-out"
+    >
+      <div
+        id="ball"
+        class="pointer-events-none fixed -my-5 flex h-10 w-10 flex-col justify-center rounded-full border-2 border-gray-600 opacity-0"
+      ></div>
+    </div>
+    <!-- / END MAGIC CURSOR AND BALL AREA-->
+    <!-- START MENU DESIGN AREA-->
+    <header class="main-header">
+      <div class="header-upper">
+        <div class="container">
+          <div class="header-inner">
+            <div class="grid grid-cols-12 items-center gap-6">
+              <div class="col-span-6 sm:col-span-3 xl:col-span-2">
+                <div class="logo-area">
+                  <div class="logo">
+                    <a href="index.html"
+                      ><img src="./assets/images/logo.png" alt=""
+                    /></a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-span-6 sm:col-span-9 xl:col-span-10">
+                <div class="main-menu">
+                  <nav id="mobile-menu">
+                    <ul>
+                      <li><a href="index.html" class="linkstyle">Inicio</a></li>
+                      <li><a href="about.html" class="linkstyle">Sobre mí</a></li>
+                      <li>
+                        <a href="service.html" class="linkstyle">Servicios</a>
+                      </li>
+                      <li class="has-dropdown group">
+                        <a href="projects.html" class="linkstyle">Proyectos</a>
+                        <ul class="sub-menu">
+                          <li><a href="projects.html">Lista de Proyectos</a></li>
+                          <li>
+                            <a href="single-project.html">Portafolio</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><a href="blog.html" class="linkstyle">Historias</a></li>
+                      <li>
+                        <a href="contact.html" class="linkstyle">Contacto</a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+                <div class="side-menu-icon text-end lg:hidden">
+                  <a
+                    href="javascript:void(0)"
+                    class="info-toggle-btn sidebar-toggle-btn"
+                    ><i class="fal fa-bars"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- // END MENU DESIGN AREA-->
+    <!-- START MOBILE MENU DESIGN AREA-->
+    <div class="sidebar__area">
+      <div class="sidebar__wrapper">
+        <div class="sidebar__close">
+          <button class="sidebar__close-btn" id="sidebar__close-btn">
+            <i class="fal fa-times"></i>
+          </button>
+        </div>
+        <div class="sidebar__content mb-[20px] mt-[50px]">
+          <div class="mobile-menu fix"></div>
+        </div>
+      </div>
+    </div>
+    <div class="body-overlay"></div>
+    <!-- // END MOBILE MENU DESIGN AREA-->
+    <!-- START SINGLE PAGE DESIGN AREA -->
+    <section class="single-page-hero-area">
+      <div class="container">
+        <div class="grid grid-cols-12 items-center gap-6">
+          <div class="col-span-12">
+            <h2>Sobre mí</h2>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- // END SINGLE PAGE DESIGN AREA -->
+    <!-- START RESUME EXPERIENCE DESIGN AREA -->
+    <div class="resume-area no-padding" id="resume">
+      <div class="container">
+        <div class="grid grid-cols-12 gap-6">
+          <div class="col-span-12 md:col-span-6">
+            <div class="resume-wrapper wow fadeInUp delay-0-2s">
+              <!-- START SINGLE EXPERIENCE DESIGN AREA -->
+              <div class="resume-box">
+                <span class="resume-date">2020 - Actualmente</span>
+                <h2>Editor de Vídeos (Full-Time)</h2>
+                <span>@ Independiente</span>
+                <p>
+                  creación, edición y postproducción de contenido audiovisual para diversas plataformas digitales y marcas. Cuento con una sólida experiencia en la narrativa visual, corrección de color, diseño de sonido e integración de gráficos en movimiento (motion graphics).
+                </p>
+              </div>
+              <!-- / END SINGLE EXPERIENCE DESIGN AREA -->
+              <!-- START SINGLE EXPERIENCE DESIGN AREA -->
+              <div class="resume-box">
+                <span class="resume-date">2020 - 2020</span>
+                <h2>Coach Ontologico Organizacional</h2>
+                <span>@ DHO Consulting</span>
+                <p>
+                  Este aprendizaje me capacita para acompañar a personas y organizaciones en la gestión del cambio, optimizando su desempeño y alineando el bienestar personal con los objetivos estratégicos de la empresa.
+                </p>
+              </div>
+              <!-- / END SINGLE EXPERIENCE DESIGN AREA -->
+              <!-- START SINGLE EXPERIENCE DESIGN AREA -->
+              <div class="resume-box">
+                <span class="resume-date">2017-2018</span>
+                <h2>Ayudante en Supply Chain</h2>
+                <span>@ BAT Bigott</span>
+                <p>
+                  Gestión de inventario de tabaco resecado, insumo agrícola, materia prima y repuestos, Manejo de indicadores y ejecución de estrategias para el control de plagas (lasioderma serricorne) de los almacenes de tabaco resecado, planificación de despacho de tabaco semanal, propuestas de mejora continua para el aprovechamiento de recursos, gestión de KPI´S y elaboración de reportes de indicadores a GLOBAL, participación en proyecto de excelencia y proyecto Enhance.
+                </p>
+              </div>
+              <!-- / END SINGLE EXPERIENCE DESIGN AREA -->
+            </div>
+          </div>
+          <div class="col-span-12 md:col-span-6">
+            <div class="resume-wrapper wow fadeInUp delay-0-4s">
+              <!-- START SINGLE EDUCATION DESIGN AREA -->
+              <div class="resume-box">
+                <span class="resume-date">2019 - 2023</span>
+                <h2>Curador Externo (Remoto) </h2>
+                <span>@ Viberate</span>
+                <p>
+                  Evaluación y clasificación de perfiles de artistas, recopilación de métricas clave en plataformas digitales asegurando precisión en la base de datos de la plataforma. Gracias a un enfoque meticuloso y un profundo entendimiento de las tendencias y generos musicales, he contribuido directamente a mejorar la calidad de la información empleadas para la toma de decisiones estratégicas de la organización.
+                </p>
+              </div>
+              <!-- / END SINGLE EDUCATION DESIGN AREA -->
+              <!-- START SINGLE EDUCATION DESIGN AREA -->
+              <div class="resume-box">
+                <span class="resume-date">2011 - 2018</span>
+                <h2>Ingeniero Industrial</h2>
+                <span>@ Politecnico Santiago Mariño</span>
+                <p>
+                  Titulado con una sólida formación en la optimización de procesos, gestión de operaciones y control de calidad
+                </p>
+              </div>
+              <!-- / END SINGLE EDUCATION DESIGN AREA -->
+              <!-- START SINGLE EDUCATION DESIGN AREA -->
+              <div class="resume-box">
+                <span class="resume-date">2016 - 2017</span>
+                <h2>Ayudante en Planificación de la Producción</h2>
+                <span>@ APC Planta Migurt</span>
+                <p>
+                  Propuesta de planificación semanal, colocación de ordenes de producción, gestión de inventarios, gestión de lista de materiales.
+                </p>
+              </div>
+              <!-- / END SINGLE EDUCATION DESIGN AREA -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- / END RESUME EXPERIENCE DESIGN AREA -->
+    <!-- START SKILL DESIGN AREA -->
+    <section id="skills" class="skill-area">
+      <div class="container">
+        <div class="container-inner">
+          <div class="grid grid-cols-12 gap-6">
+            <div class="lg:col-span-12 xl:col-span-12">
+              <div
+                class="section-title section-black-title wow fadeInUp delay-0-2s mb-10"
+              >
+                <h2>Habilidades</h2>
+              </div>
+            </div>
+          </div>
+          <div class="grid grid-cols-12 gap-6">
+            <div class="col-span-12">
+              <div class="skill-items-wrap">
+                <div class="grid grid-cols-12 gap-6">
+                  <div
+                    class="col-span-6 sm:col-span-4 md:col-span-3 lg:col-span-4 xl:col-span-3"
+                  >
+                    <div class="skill-item wow fadeInUp delay-0-2s">
+                      <img src="assets/images/skills/skill1.png" alt="Skill" />
+                      <h5 style="font-size: 30px;">After Effects</h5>
+                    </div>
+                  </div>
+                  <div
+                    class="col-span-6 sm:col-span-4 md:col-span-3 lg:col-span-4 xl:col-span-3"
+                  >
+                    <div class="skill-item wow fadeInUp delay-0-3s">
+                      <img src="assets/images/skills/skill2.png" alt="Skill" />
+                      <h5 style="font-size: 30px;">Premiere Pro</h5>
+                    </div>
+                  </div>
+                  <div
+                    class="col-span-6 sm:col-span-4 md:col-span-3 lg:col-span-4 xl:col-span-3"
+                  >
+                    <div class="skill-item wow fadeInUp delay-0-4s">
+                      <img src="assets/images/skills/skill3.png" alt="Skill" />
+                      <h5 style="font-size: 30px;">Photoshop</h5>
+                    </div>  
+                  </div>
+                  <div
+                    class="col-span-6 sm:col-span-4 md:col-span-3 lg:col-span-4 xl:col-span-3"
+                  >
+                    <div class="skill-item wow fadeInUp delay-0-5s">
+                      <img src="assets/images/skills/skill4.png" alt="Skill" />
+                      <h5 style="font-size: 30px;">Illustrator</h5>
+                    </div>
+                  </div>
+                  <div
+                    class="col-span-6 sm:col-span-4 md:col-span-3 lg:col-span-4 xl:col-span-3"
+                  >
+                    <div class="skill-item wow fadeInUp delay-0-2s">
+                      <img src="assets/images/skills/skill5.png" alt="Skill" />
+                      <h5 style="font-size: 30px;">Capcut</h5>
+                    </div>
+                  </div>
+                  <div
+                    class="col-span-6 sm:col-span-4 md:col-span-3 lg:col-span-4 xl:col-span-3"
+                  >
+                    <div class="skill-item wow fadeInUp delay-0-3s">
+                      <img src="assets/images/skills/skill6.png" alt="Skill" />
+                      <h5 style="font-size: 30px;">Lightroom</h5>
+                    </div>
+                  </div>
+                  <div
+                    class="col-span-6 sm:col-span-4 md:col-span-3 lg:col-span-4 xl:col-span-3"
+                  >
+                    <div class="skill-item wow fadeInUp delay-0-4s">
+                      <img src="assets/images/skills/skill7.png" alt="Skill" />
+                      <h5 style="font-size: 30px;">Obs</h5>
+                    </div>
+                  </div>
+                  <div
+                    class="col-span-6 sm:col-span-4 md:col-span-3 lg:col-span-4 xl:col-span-3"
+                  >
+                    <div class="skill-item wow fadeInUp delay-0-5s">
+                      <img src="assets/images/skills/skill8.png" alt="Skill" />
+                      <h5 style="font-size: 30px;">Runway</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- / END SKILL DESIGN AREA -->
+    <!-- START FOOTER DESIGN AREA -->
+    <footer class="main-footer">
+      <div class="container">
+        <div class="grid grid-cols-12 gap-6">
+          <div class="col-span-12">
+            <div class="footer-top">
+              <p>Tienes un proyecto en mente ?</p>
+              <h2
+                class="text-[120px] max-[490px]:text-[100px] max-[350px]:text-[80px] md:text-[140px] lg:text-[130px] xl:text-[180px]"
+              >
+                <a href="https://wa.me/584144997735">Haz Click!</a>
+              </h2>
+            </div>
+          </div>
+        </div>
+        <div class="grid grid-cols-12 gap-6">
+          <div class="col-span-12 sm:col-span-6">
+            <p class="copy-left-text">
+              Template by
+              <a href="https://themeforest.net/user/creativepersonal/portfolio"
+                >Creative Personal®</a
+              >
+            </p>
+          </div>
+          <div class="col-span-12 sm:col-span-6">
+            <p class="copy-right-text">&copy; Copyright 2024</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- / END FOOTER DESIGN AREA -->
+    <!-- JQUERY JS -->
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+
+    <!-- APPEAR JS -->
+    <script src="assets/js/appear.min.js"></script>
+    <!-- MAGNIFICANT JS -->
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <!-- MOBILE MENU JS-->
+    <script src="assets/js/mobilemenu.js"></script>
+    <!-- GSAP AND LOCOMOTIV JS-->
+    <script src="assets/js/gsap.min.js"></script>
+    <script src="assets/js/ScrollTrigger.min.js"></script>
+    <script src="assets/js/lenis.js"></script>
+    <!-- SWIPPER JS-->
+    <script src="assets/js/swiper-bundle.js"></script>
+    <!-- NICE SELECT JS-->
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <!-- IMAGE LOADER JS-->
+    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+    <!-- ISOTOPE JS-->
+    <script src="assets/js/isotope.pkgd.min.js"></script>
+    <!--  WOW ANIMATION JS-->
+    <script src="assets/js/wow.min.js"></script>
+    <!-- SCRIPT JS-->
+    <script src="assets/js/script.js"></script>
+  <script defer src="index.js"></script></body>
+</html>

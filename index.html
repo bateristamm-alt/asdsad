@@ -1,0 +1,1040 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- META -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Nino - Modern Portfolio Template" />
+    <meta
+      name="keywords"
+      content="Edición, Vídeos, Editor, Premiere, Aftereffects, Motion Graphics, Freelancer, Venezuela, Independiente"
+    />
+    <meta name="author" content="Tanvir Hossain" />
+    <!-- PAGE TITLE -->
+    <title>Arcangelmg - Editor de vídeos</title>
+    <link rel="icon" type="image/x-icon" href="./assets/images/favicon.png" />
+
+    <!-- FONT AWESOME CSS -->
+    <link rel="stylesheet" href="./assets/css/font-awesome-pro.css" />
+    <!-- FONT AWESOME CSS -->
+    <link rel="stylesheet" href="./assets/fonts/remixicon.css" />
+    <!-- MAGNIFIC CSS -->
+    <link rel="stylesheet" href="./assets/css/magnific-popup.css" />
+    <!-- NICE SELECT CSS -->
+    <link rel="stylesheet" href="./assets/css/nice-select.min.css" />
+    <!-- ANIMATE CSS -->
+    <link rel="stylesheet" href="./assets/css/animate.min.css" />
+    <!-- MOBILE MENU CSS -->
+    <link rel="stylesheet" href="./assets/css/mobilemenu.css" />
+    <!-- SLICK CSS -->
+    <link rel="stylesheet" href="./assets/css/slick.min.css" />
+    <!-- SPACING CSS -->
+    <link rel="stylesheet" href="./assets/css/spacing.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  <link href="style.css" rel="stylesheet"></head>
+
+  <body class="overflow-x-hidden bg-bodyBackground font-normal text-greyBg">
+    <!-- START PRELOADER AREA-->
+
+    <div
+      class="preloader fixed left-0 top-0 z-[99999999999999] flex h-[100vh] w-full items-center justify-center overflow-hidden bg-transparent"
+    >
+      <svg
+        class="absolute top-0 h-[110vh] w-[100vw] fill-bodyBackground"
+        viewbox="0 0 1000 1000"
+        preserveaspectratio="none"
+      >
+        <path
+          id="preloaderSvg"
+          d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"
+        ></path>
+      </svg>
+      <div class="preloader-heading">
+        <div
+          class="load-text z-20 text-xl font-extralight uppercase tracking-[15px]"
+        >
+          <span>C</span>
+          <span>a</span>
+          <span>r</span>
+          <span>g</span>
+          <span>a</span>
+          <span>n</span>
+           <span>d</span>
+          <span>o</span>          
+        </div>
+      </div>
+    </div>
+
+    <!-- END PRELOADER AREA -->
+    <!-- START SCROOL UP DESIGN AREA -->
+    <div
+      class="progress-wrap fixed bottom-[30px] right-[30px] z-50 block size-11 cursor-pointer rounded-[50px]"
+    >
+      <i
+        class="ri-arrow-up-s-line absolute left-[10px] top-2 text-center text-[25px]"
+      ></i>
+      <svg
+        class="progress-circle svg-content"
+        width="100%"
+        height="100%"
+        viewBox="-1 -1 102 102"
+      >
+        <path
+          d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"
+          class="fill-none stroke-[#ddd] stroke-[4] duration-500"
+        />
+      </svg>
+    </div>
+    <!-- / END SCROOL UP DESIGN AREA -->
+    <!-- START MAGIC CURSOR AND BALL AREA-->
+    <div
+      id="magic-cursor"
+      class="pointer-events-none absolute left-0 top-0 z-[10000] h-[30px] w-[30px] delay-500 duration-200 ease-in-out"
+    >
+      <div
+        id="ball"
+        class="pointer-events-none fixed -my-5 flex h-10 w-10 flex-col justify-center rounded-full border-2 border-gray-600 opacity-0"
+      ></div>
+    </div>
+    <!-- / END MAGIC CURSOR AND BALL AREA-->
+    <!-- START MENU DESIGN AREA-->
+    <header class="main-header">
+      <div class="header-upper">
+        <div class="container">
+          <div class="header-inner">
+            <div class="grid grid-cols-12 items-center gap-6">
+              <div class="col-span-6 sm:col-span-3 xl:col-span-2">
+                <div class="logo-area">
+                  <div class="logo">
+                    <a href="index.html"
+                      ><img src="./assets/images/logo.png" alt=""
+                    /></a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-span-6 sm:col-span-9 xl:col-span-10">
+                <div class="main-menu">
+                  <nav id="mobile-menu">
+                    <ul>
+                      <li><a href="index.html" class="linkstyle">Inicio</a></li>
+                      <li><a href="about.html" class="linkstyle">Sobre mí</a></li>
+                      <li>
+                        <a href="service.html" class="linkstyle">Servicios</a>
+                      </li>
+                      <li class="has-dropdown group">
+                        <a href="projects.html" class="linkstyle">Proyectos</a>
+                        <ul class="sub-menu">
+                          <li><a href="projects.html">Lista de Proyectos</a></li>
+                          <li>
+                            <a href="single-project.html">Portafolio</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><a href="blog.html" class="linkstyle">Historias</a></li>
+                      <li>
+                        <a href="contact.html" class="linkstyle">Contacto</a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+                <div class="side-menu-icon text-end lg:hidden">
+                  <a
+                    href="javascript:void(0)"
+                    class="info-toggle-btn sidebar-toggle-btn"
+                    ><i class="fal fa-bars"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- // END MENU DESIGN AREA-->
+    <!-- START MOBILE MENU DESIGN AREA-->
+    <div class="sidebar__area">
+      <div class="sidebar__wrapper">
+        <div class="sidebar__close">
+          <button class="sidebar__close-btn" id="sidebar__close-btn">
+            <i class="fal fa-times"></i>
+          </button>
+        </div>
+        <div class="sidebar__content mb-[20px] mt-[50px]">
+          <div class="mobile-menu fix"></div>
+        </div>
+      </div>
+    </div>
+    <div class="body-overlay"></div>
+    <!-- // END MOBILE MENU DESIGN AREA-->
+    <!-- START HEADER DESIGN AREA -->
+    <section id="home" class="bg-primaryColor pt-[115px]">
+      <div class="container">
+        <div class="grid grid-cols-12">
+          <div class="col-span-12">
+            <!-- START HERO DESIGN AREA -->
+            <div class="wow fadeInUp delay-0-2s p-0 text-center">
+              <h2
+                class="text-center text-[70px] font-medium uppercase text-mainColor md:text-[120px] lg:text-[170px] xl:text-[230px]"
+              >
+                Arcangelmg
+              </h2>
+            </div>
+            <!-- / END HERO DESIGN AREA -->
+          </div>
+        </div>
+        <div class="grid grid-cols-12 max-lg:overflow-hidden lg:gap-6">
+          <div class="col-span-12 pt-8 lg:col-span-3">
+            <!-- START HERO DESIGN AREA -->
+            <div
+              class="hero-content wow fadeInUp delay-0-2s max-xl:p-0 max-md:p-0"
+            >
+              <div class="clienti-reviews">
+                <ul class="clienti-profile">
+                  <li>
+                    <img
+                      class="img-fluid"
+                      src="./assets/images/avatar/01.jpg"
+                      alt="client"
+                    />
+                  </li>
+                  <li>
+                    <img
+                      class="img-fluid"
+                      src="./assets/images/avatar/02.jpg"
+                      alt="client"
+                    />
+                  </li>
+                  <li>
+                    <img
+                      class="img-fluid"
+                      src="./assets/images/avatar/03.jpg"
+                      alt="client"
+                    />
+                  </li>
+                </ul>
+                <div class="reviews">
+                  30+ Reseñas <span>(4.96 of 5)</span>
+                  <p>Testimonios de mis Clientes.</p>
+                </div>
+              </div>
+            </div>
+            <!-- / END HERO DESIGN AREA -->
+          </div>
+          <div class="col-span-12 lg:col-span-6">
+            <div class="hero-image lg:-mt-[100px]">
+              <img src="./assets/images/about/me.jpg" alt="" />
+            </div>
+            <!-- / END HERO DESIGN AREA -->
+          </div>
+          <div class="col-span-12 pt-8 lg:col-span-3">
+            <div class="hero-content wow fadeInUp delay-0-4s">
+              <p class="pb-4">
+                Hola, soy Arcangelmg, editor de vídeo profesional con más de 5 años de experiencia transformando ideas en contenido dinámico de alto impacto para marcas y canales de YouTube.
+                
+              </p>
+              <a class="theme-btn" href="https://wa.me/+584144997735">Contáctame</a>
+            </div>
+            <!-- / END HERO DESIGN AREA -->
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- / END HEADER DESIGN AREA -->
+
+    <!-- START COMPANY DESIGN AREA -->
+    <div class="company-design-area">
+      <div class="container">
+        <div class="grid grid-cols-12 gap-6">
+          <div class="col-span-12">
+            <h2>Marcas con las que he trabajado</h2>
+            <div class="company-list">
+              <div
+                class="scroller"
+                data-animated="true"
+                data-direction="left"
+                data-speed="slow"
+              >
+                <div class="scroller__inner">
+                  <img
+                    src="./assets/images/client-logos/partner1.png"
+                    alt="Company"
+                  />
+                  <img
+                    src="./assets/images/client-logos/partner2.png"
+                    alt="Company"
+                  />
+                  <img
+                    src="./assets/images/client-logos/partner3.png"
+                    alt="Company"
+                  />
+                  <img
+                    src="./assets/images/client-logos/partner4.png"
+                    alt="Company"
+                  />
+                  <img
+                    src="./assets/images/client-logos/partner5.png"
+                    alt="Company"
+                  />
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- // END COMPANY DESIGN AREA -->
+
+    <!-- START ABOUT DESIGN AREA -->
+    <section id="about" class="about-area">
+      <div class="container">
+        <div class="grid grid-cols-12 gap-6">
+          <!-- START ABOUT TEXT DESIGN AREA -->
+          <div class="col-span-12 sm:col-span-3">
+            <h2 class="about-pre-title">Sobre Mí</h2>
+          </div>
+          <div class="col-span-12 sm:col-span-9">
+            <div class="about-content-part wow fadeInUp delay-0-2s max-md:px-0">
+              <p>
+                Hola! soy Arcangelmg, un editor de vídeo con más de 5 años de experiencia ayudando a Marcas y Creadores de contenido.
+              </p>
+            </div>
+            <!-- START COUNTER DESIGN AREA -->
+            <div
+              class="hero-counter-area wow fadeInUp delay-0-4s flex items-center justify-between"
+            >
+              <div class="counter-item counter-text-wrap">
+                <span class="count-text plus" data-speed="3000" data-stop="5"
+                  >0</span
+                >
+                <span class="counter-title">Años de Experiencia</span>
+              </div>
+              <div class="counter-item counter-text-wrap">
+                <span class="count-text plus" data-speed="3000" data-stop="350"
+                  >0</span
+                >
+                <span class="counter-title">Proyectos Entregados</span>
+              </div>
+              <div class="counter-item counter-text-wrap">
+                <span
+                  class="count-text percent"
+                  data-speed="3000"
+                  data-stop="97"
+                  >0</span
+                >
+                <span class="counter-title">Clientes Satisfechos</span>
+              </div>
+            </div>
+            <!-- / END COUNTER DESIGN AREA -->
+          </div>
+          <!-- / END ABOUT TEXT DESIGN AREA -->
+        </div>
+      </div>
+    </section>
+    <!-- / END ABOUT DESIGN AREA -->
+    <!-- START SERVICE DESIGN AREA -->
+    <section id="services" class="services-area">
+      <div class="container">
+        <div class="grid grid-cols-12 gap-6">
+          <div class="col-span-12">
+            <div
+              class="section-title section-black-title wow fadeInUp delay-0-2s"
+            >
+              <h2>Servicios</h2>
+            </div>
+          </div>
+        </div>
+        <div class="grid grid-cols-12 gap-6">
+          <!-- START SINGLE SERVICE DESIGN AREA -->
+          <div class="col-span-12 md:col-span-7 lg:col-span-8">
+            <div class="service-item wow fadeInUp delay-0-2s">
+              <i class="ri-arrow-right-up-line"></i>
+              <h5>01</h5>
+              <h4>Edición de Vídeo</h4>
+              <p>
+                Detrás de cada gran video hay una idea, un esfuerzo y una voz que merece ser escuchada. 
+                Mi servicio de edición no se trata solo de cortar clips o añadir efectos en una pantalla; 
+                se trata de conectar. Entiendo el valor de tu contenido y el propósito que hay detrás de cada proyecto, 
+                por lo que trabajo a tu lado para transformar tus grabaciones en una experiencia visual que emocione, 
+                inspire y resuene de verdad con tu comunidad.
+              </p>
+            </div>
+          </div>
+          <!-- / END SINGLE SERVICE DESIGN AREA -->
+          <!-- START SINGLE SERVICE DESIGN AREA -->
+          <div class="col-span-12 md:col-span-5 lg:col-span-4">
+            <div class="service-item wow fadeInUp delay-0-4s">
+              <i class="ri-arrow-right-up-line"></i>
+              <h5>02</h5>
+              <h4>Motion Graphics</h4>
+              <p>
+                Para mí, Añadir Graficos Animados a tu proyecto es darle un corazón visual a tu mensaje. 
+                Se trata de transformar lo invisible en algo tangible, dinámico y profundamente conectado con 
+                la identidad de tu proyecto.
+              </p>
+            </div>
+          </div>
+          <!-- / END SINGLE SERVICE DESIGN AREA -->
+          <!-- START SINGLE SERVICE DESIGN AREA -->
+          <div class="col-span-12 md:col-span-5 lg:col-span-4">
+            <div class="service-item wow fadeInUp delay-0-6s">
+              <i class="ri-arrow-right-up-line"></i>
+              <h5>03</h5>
+              <h4>Análisis de resultados</h4>
+              <p>
+                En mi caso, un proyecto no termina cuando exporto el video final; sino cuando vemos el impacto real que 
+                genera en tu comunidad. Sé el esfuerzo que pones al publicar y por eso doy un extra para evaluar el resultado 
+                del vídeo publicado, evaluar oportunidades de mejora y aplicarlo en vídeos futuros.
+              </p>
+            </div>
+          </div>
+          <!-- / END SINGLE SERVICE DESIGN AREA -->
+          <!-- START SINGLE SERVICE DESIGN AREA -->
+          <div class="col-span-12 md:col-span-7 lg:col-span-8">
+            <div class="service-item wow fadeInUp delay-0-8s">
+              <i class="ri-arrow-right-up-line"></i>
+              <h5>04</h5>
+              <h4>Integración con el proyecto</h4>
+              <p>
+                Creo firmemente que un gran contenido no solo se pule en la postproducción, sino que se siembra desde la misma idea. Por eso, mi enfoque es totalmente proactivo. Me encanta ir un paso más allá de la edición técnica: analizo las tendencias, estudio lo que resuena con tu audiencia y propongo temáticas, enfoques y estrategias para que los evalues para tu futura creación de tu contenido. Todo con la finalidad de que tu canal o marca se mantenga siempre vigente, relevante y en constante evolución. 
+                No soy solo el que edita tus videos; soy un aliado estratégico enfocado en hacer crecer tu proyecto.
+              </p>
+            </div>
+          </div>
+          <!-- / END SINGLE SERVICE DESIGN AREA -->
+        </div>
+      </div>
+    </section>
+    <!-- / END SERVICE DESIGN AREA -->
+
+    <!-- START PORTFOLIO DESIGN AREA -->
+    <div class="projects-area" id="portfolio">
+      <div class="custom-icon">
+        <img src="assets/images/custom/work-scribble.svg" alt="custom" />
+      </div>
+      <div class="container-fluid">
+        <div class="portfolio-grid grid grid-cols-12 gap-6">
+          
+          
+          
+          <!-- START SINGLE PORTFOLIO DESIGN AREA -->
+          <div class="portfolio-item category-1 col-span-12 md:col-span-6">
+            <a href="https://www.youtube.com/watch?v=5rICrlJdtok"
+              class="popup-youtube"
+            >
+              <div class="portfolio-box">
+                <!-- Image -->
+                <img
+                  src="assets/images/projects/work1.jpg"
+                  alt=""
+                  data-rjs="2"
+                />
+                <!-- Category -->
+                <span class="portfolio-category">Vídeo</span>
+                <!-- Caption -->
+                <div class="portfolio-caption">
+                  <h1>¿Podemos colonizar Marte? 🚀 El sueño de Musk y la ideología de la terraformación</h1>
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- // END SINGLE PORTFOLIO DESIGN AREA -->
+
+
+
+
+          <!-- START SINGLE PORTFOLIO DESIGN AREA -->
+          <div class="portfolio-item category-2 col-span-12 md:col-span-6">
+            <a href="https://www.youtube.com/watch?v=JPMbOuULvQw"
+              class="popup-youtube"
+            >
+              <div class="portfolio-box">
+                <!-- Image -->
+                <img
+                  src="assets/images/projects/work2.jpg"
+                  alt=""
+                  data-rjs="2"
+                />
+                <!-- Category -->
+                <span class="portfolio-category">Vídeo</span>
+                <!-- Caption -->
+                <div class="portfolio-caption">
+                  <h1>No tienes éxito porque no entiendes ESTO sobre tu mente | Ernest Dift</h1>
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- // END SINGLE PORTFOLIO DESIGN AREA -->
+
+
+          
+          <!-- START SINGLE PORTFOLIO DESIGN AREA -->
+          <div
+            class="portfolio-item category-2 col-span-12 md:col-span-6 xl:col-span-4"
+          >
+            <a
+              href="https://www.youtube.com/watch?v=jjQcMEAFW7Y"
+              class="popup-youtube"
+            >
+              <div class="portfolio-box">
+                <!-- Image -->
+                <img
+                  src="assets/images/projects/work3.jpg"
+                  alt=""
+                  data-rjs="2"
+                />
+                <!-- Category -->
+                <span class="portfolio-category">Vídeo</span>
+                <!-- Caption -->
+                <div class="portfolio-caption">
+                  <h1>¿Está TRUMP DAÑANDO la ECONOMÍA de EEUU? 📉 | ‪@CentralClimatica‬</h1>
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- // END SINGLE PORTFOLIO DESIGN AREA -->
+
+
+
+
+
+
+          
+          <!-- START SINGLE PORTFOLIO DESIGN AREA -->
+          <div
+            class="portfolio-item category-1 col-span-12 md:col-span-6 xl:col-span-4"
+          >
+            <a href="https://www.youtube.com/watch?v=NYK6H6nEZ8E"
+              class="popup-youtube"
+            >
+              <div class="portfolio-box">
+                <!-- Image -->
+                <img
+                  src="assets/images/projects/work4.jpg"
+                  alt=""
+                  data-rjs="2"
+                />
+                <!-- Category -->
+                <span class="portfolio-category">Vídeo</span>
+                <!-- Caption -->
+                <div class="portfolio-caption">
+                  <h1> ¿Por qué la derecha está obsesionada con el auto privado? Negacionismo climático y libertad</h1>
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- // END SINGLE PORTFOLIO DESIGN AREA -->
+
+
+
+
+          <!-- START SINGLE PORTFOLIO DESIGN AREA -->
+          <div
+            class="portfolio-item category-2 col-span-12 md:col-span-6 xl:col-span-4"
+          >
+            <a href="https://www.youtube.com/watch?v=1Gwur8fdiIo"
+              class="popup-youtube"
+            >
+              <div class="portfolio-box">
+                <!-- Image -->
+                <img
+                  src="assets/images/projects/work5.jpg"
+                  alt=""
+                  data-rjs="2"
+                />
+                <!-- Category -->
+                <span class="portfolio-category">Vídeo</span>
+                <!-- Caption -->
+                <div class="portfolio-caption">
+                  <h1>No sabes a que dedicarte en la vida... ChatGPT te dice tu propósito de vida.</h1>
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- // END SINGLE PORTFOLIO DESIGN AREA -->
+        </div>
+      </div>
+    </div>
+    <!-- // END PORTFOLIO DESIGN AREA -->
+
+    <!-- START TESTIMONIALS DESIGN AREA -->
+    <section class="testimonials-area">
+      <div class="container">
+        <div class="gird grid-cols-12">
+          <div class="lg:col-span-12">
+            <div
+              class="section-title section-black-title wow fadeInUp delay-0-2s"
+            >
+              <h2>Testimonios</h2>
+            </div>
+          </div>
+        </div>
+        <div class="grid grid-cols-12 gap-6">
+          <div class="col-span-12 md:col-span-6">
+           
+           
+           
+           
+           
+            <!-- START SINGLE TESTIMONIALS DESIGN AREA -->
+            <div class="testimonial-item wow fadeInUp delay-0-2s">
+              
+              <div class="testi-des">
+                <h5>Sonia Nieto</h5>
+                <span>Coach & Terapista de pareja</span>
+              </div>
+              
+              
+              <div class="author">
+                <img
+                  src="assets/images/testimonials/author1.jpg"
+                  alt="Author"
+                />
+              </div>
+              
+              <img
+                  src="assets/images/testimonials/7.png"
+                  alt="Author"
+                />
+              
+              
+                
+            </div>
+            <!-- / END SINGLE TESTIMONIALS DESIGN AREA -->
+          </div>
+          <div class="col-span-12 md:col-span-6">
+            <!-- START SINGLE TESTIMONIALS DESIGN AREA -->
+            <div class="testimonial-item wow fadeInUp delay-0-4s">
+              
+              <div class="testi-des">
+                <h5>Lydia Bellamy</h5>
+                <span>Trainer & Fitness Content</span>
+              </div>
+
+
+
+
+              <div class="author">
+                <img
+                  src="assets/images/testimonials/author2.jpg"
+                  alt="Author"
+                />
+              </div>
+               <img
+                  src="assets/images/testimonials/1.png"
+                  alt="Author"
+                />
+              
+            </div>
+            <!-- / END SINGLE TESTIMONIALS DESIGN AREA -->
+          </div>
+          <div class="col-span-12 md:col-span-6 lg:col-span-4">
+            <!-- START SINGLE TESTIMONIALS DESIGN AREA -->
+
+
+            <div class="testimonial-item wow fadeInUp delay-0-6s">
+              <div class="author">
+                <img
+                  src="assets/images/testimonials/author3.jpg"
+                  alt="Author"
+                />
+                <div class="testi-des">
+                <h5>TRFitness</h5>
+                <span>Trainers & Coach</span>
+              </div>
+                
+              </div>
+               <img
+                  src="assets/images/testimonials/2.png"
+                  alt="Author"
+                />
+              
+            </div>
+            <!-- / END SINGLE TESTIMONIALS DESIGN AREA -->
+          </div>
+          <div class="col-span-12 md:col-span-6 lg:col-span-4">
+            <!-- START SINGLE TESTIMONIALS DESIGN AREA -->
+            <div class="testimonial-item wow fadeInUp delay-0-8s">
+              <div class="author">
+                <img
+                  src="assets/images/testimonials/author4.jpg"
+                  alt="Author"
+                />
+              <div class="testi-des">
+                <h5>Jorge Muñoz</h5>
+                <span>Mentor en Ley de Atracción</span>
+              </div>
+
+
+
+
+
+              </div>
+               <img
+                  src="assets/images/testimonials/3.png"
+                  alt="Author"
+                />
+              
+            </div>
+            <!-- / END SINGLE TESTIMONIALS DESIGN AREA -->
+          </div>
+          <div class="col-span-12 md:col-span-6 lg:col-span-4">
+            <!-- START SINGLE TESTIMONIALS DESIGN AREA -->
+            <div class="testimonial-item wow fadeInUp delay-0-9s">
+              <div class="author">
+                <img
+                  src="assets/images/testimonials/author5.jpg"
+                  alt="Author"
+                />
+              </div>
+              
+              <div class="testi-des">
+                <h5>Wake Up</h5>
+                <span>Plataforma Educativa y Marca</span>
+              </div>
+
+
+               <img
+                  src="assets/images/testimonials/4.png"
+                  alt="Author"
+                />
+              
+            </div>
+            <!-- / END SINGLE TESTIMONIALS DESIGN AREA -->
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- / END TESTIMONIALS DESIGN AREA -->
+
+    <!-- START VLOG DESIGN AREA HISTORIAS -->
+    <section class="blog-area">
+      <div class="container">
+        <div class="grid grid-cols-12 gap-6">
+          <div class="col-span-12">
+            <div class="section-title wow fadeInUp delay-0-2s">
+              <h2>Historias</h2>
+            </div>
+          </div>
+        </div>
+        <!-- START SINGLE VLOG DESIGN AREA -->
+        <div class="blog-post-box grid grid-cols-12 items-center sm:gap-6">
+
+          
+          <div class="col-span-12 lg:col-span-6">
+
+            
+            <div class="blog-post-img">
+              <a href="#">
+                <img src="assets/images/blog/blog1.jpg" alt="" />
+              </a>
+              <div class="blog-post-category">
+                <a href="#"></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-12 lg:col-span-6">
+            <div class="blog-post-caption">
+              <h3 class="">Posted on Aug 28</h3>
+              <h2>
+                <a class="link-decoration" href="#"
+                  >Cortometraje "Las Recetas del Abuelo"</a
+                >
+              </h2>
+              
+              
+            </div>
+          </div>
+        </div>
+        <!-- START SINGLE VLOG DESIGN AREA -->
+        <!-- START SINGLE VLOG DESIGN AREA -->
+        <div class="blog-post-box grid grid-cols-12 items-center sm:gap-6">
+          <div class="col-span-12 lg:col-span-6">
+            <div class="blog-post-img">
+              <a href="#">
+                <img src="assets/images/blog/blog2.jpg" alt="" />
+              </a>
+              <div class="blog-post-category">
+                <a href="#"></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-12 lg:col-span-6">
+            <div class="blog-post-caption">
+              <h3 class="max-sm:pt-3">Posted on Aug 28</h3>
+              <h2>
+                <a class="link-decoration" href="#"
+                  >Corto para "Peregrina Birras"</a
+                >
+              </h2>
+              
+              
+            </div>
+          </div>
+        </div>
+        <!-- START SINGLE VLOG DESIGN AREA -->
+        <!-- START SINGLE VLOG DESIGN AREA -->
+        <div class="blog-post-box grid grid-cols-12 items-center sm:gap-6">
+          <div class="col-span-12 lg:col-span-6">
+            <div class="blog-post-img">
+              <a href="#">
+                <img src="assets/images/blog/blog3.jpg" alt="" />
+              </a>
+              <div class="blog-post-category">
+                <a href="#"></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-12 lg:col-span-6">
+            <div class="blog-post-caption">
+              <h3 class="max-sm:pt-3">Posted on Aug 28</h3>
+              <h2>
+                <a class="link-decoration" href="#"
+                  >Corto para Mureki Studio</a
+                >
+              </h2>
+              
+              
+            </div>
+          </div>
+        </div>
+        <!-- START SINGLE VLOG DESIGN AREA -->
+      </div>
+    </section>
+    <!-- / END VLOG DESIGN AREA -->
+
+    <!-- START CONTACT DESIGN AREA -->
+    <section id="contact" class="contact-area">
+      <div class="container">
+        <div class="grid grid-cols-12 gap-6">
+          <div class="col-span-12">
+            <div
+              class="section-title section-black-title wow fadeInUp delay-0-2s"
+            >
+              <h2>Contáctame</h2>
+            </div>
+          </div>
+        </div>
+        <div class="grid grid-cols-12 gap-6">
+          <div class="col-span-12 lg:col-span-4">
+            <div class="contact-content-part wow fadeInUp delay-0-2s">
+              <!-- START CONTACT SINGLEDESIGN AREA -->
+              <div class="single-contact wow fadeInUp" data-wow-delay=".2s">
+                <span class="circle-btn">
+                  <i class="ri-map-pin-line"></i>
+                </span>
+                <h2>Ubicación:</h2>
+                <p>Valencia Venezuela</p>
+              </div>
+              <!-- / END CONTACT SINGLEDESIGN AREA -->
+              <!-- START CONTACT SINGLEDESIGN AREA -->
+              <div class="single-contact wow fadeInUp" data-wow-delay=".4s">
+                <span class="circle-btn">
+                  <i class="ri-headphone-line"></i>
+                </span>
+                <h2>Contacto:</h2>
+                <p>+584144997735:</p>
+              </div>
+              <!-- / END CONTACT SINGLEDESIGN AREA -->
+              <!-- START CONTACT SINGLEDESIGN AREA -->
+              <div class="single-contact wow fadeInUp" data-wow-delay=".6s">
+                <span class="circle-btn">
+                  <i class="ri-mail-line"></i>
+                </span>
+                <h2>Escríbeme:</h2>
+                <p>baterista.mm@gmail.com</p>
+              </div>
+              <!-- / END CONTACT SINGLEDESIGN AREA -->
+              <!-- START CONTACT SINGLEDESIGN AREA -->
+              <div class="single-contact wow fadeInUp" data-wow-delay=".6s">
+                <h2>Redes Sociales:</h2>
+                <div class="about-social">
+                  <ul>
+                    <li>
+                      <a href="https://www.facebook.com/mgarcangel/"><i class="ri-facebook-circle-fill"></i></a>
+                    </li>
+                    <li>
+                      <a href="https://www.instagram.com/arcangelph/"><i class="ri-instagram-line"></i></a>
+                    </li>
+                    <li>
+                      <a href="https://www.linkedin.com/in/arcangelph/"><i class="ri-linkedin-fill"></i></a>
+                    </li>
+                    <li>
+                      <a href="https://wa.me/584144997735"><i class="ri-whatsapp-line"></i></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <!-- / END CONTACT SINGLEDESIGN AREA -->
+            </div>
+          </div>
+          <!-- START CONTACT FORM DESIGN AREA -->
+          <div class="col-span-12 lg:col-span-8">
+            <div class="contact-form contact-form-area wow fadeInUp delay-0-4s">
+              <form
+                id="contactForm"
+                class="contact-form"
+                action="#"
+                method="post"
+              >
+                <div class="grid grid-cols-12 !gap-6">
+                  <div class="col-span-12 md:col-span-6">
+                    <div class="form-group relative">
+                      <label for="name">NOMBRE COMPLETO</label>
+                      <input
+                        type="text"
+                        id="name"
+                        class="form-control"
+                        value=""
+                        placeholder="MARIA FERRER"
+                        required=""
+                        data-error="Please enter your Name"
+                      />
+                      <label for="name" class="for-icon"
+                        ><i class="far fa-user"></i
+                      ></label>
+                      <div class="help-block with-errors"></div>
+                    </div>
+                  </div>
+                  <div class="col-span-12 md:col-span-6">
+                    <div class="form-group">
+                      <label for="email">DIRECCION DE CORREO</label>
+                      <input
+                        type="email"
+                        id="email"
+                        class="form-control"
+                        value=""
+                        placeholder="Hola@websitename.com"
+                        required=""
+                        data-error="Please enter your Email"
+                      />
+                      <label for="email" class="for-icon"
+                        ><i class="far fa-envelope"></i
+                      ></label>
+                      <div class="help-block with-errors"></div>
+                    </div>
+                  </div>
+                  <div class="col-span-12 md:col-span-12">
+                    <div class="form-group">
+                      <label for="name">Asunto</label>
+                      <input
+                        type="text"
+                        id="subject"
+                        class="form-control"
+                        value=""
+                        placeholder="Tu Asunto"
+                        required=""
+                        data-error="Please enter your Name"
+                      />
+                      <label for="name" class="for-icon"
+                        ><i class="far fa-user"></i
+                      ></label>
+                      <div class="help-block with-errors"></div>
+                    </div>
+                  </div>
+                  <div class="col-span-12 md:col-span-12">
+                    <div class="form-group">
+                      <label for="message">Tu Mensaje</label>
+                      <textarea
+                        name="message"
+                        id="message"
+                        class="form-control"
+                        rows="4"
+                        placeholder="Escribe Tu Mensaje"
+                        required=""
+                        data-error="Por favor escribe Tu Mensaje"
+                      ></textarea>
+                      <div class="help-block with-errors"></div>
+                    </div>
+                  </div>
+                  <div class="col-span-12 md:col-span-12">
+                    <div class="form-group mb-0">
+                      <button type="submit" class="theme-btn">
+                        Envía tu mensaje <i class="ri-mail-line"></i>
+                      </button>
+                      <div id="msgSubmit" class="hidden"></div>
+                    </div>
+                  </div>
+                  <div class="col-span-12 text-center md:col-span-12">
+                    <p class="input-success">
+                      We have received your mail, We will get back to you soon!
+                    </p>
+                    <p class="input-error">
+                      Sorry, Message could not send! Please try again.
+                    </p>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <!-- / END CONTACT FORM DESIGN AREA -->
+        </div>
+      </div>
+    </section>
+    <!-- / END CONTACT DESIGN AREA -->
+    <!-- START FOOTER DESIGN AREA -->
+    <footer class="main-footer">
+      <div class="container">
+        <div class="grid grid-cols-12 gap-6">
+          <div class="col-span-12">
+            <div class="footer-top">
+              <p>Tienes un proyecto en mente ?</p>
+              <h2
+                class="text-[120px] max-[490px]:text-[100px] max-[350px]:text-[80px] md:text-[140px] lg:text-[130px] xl:text-[180px]"
+              >
+                <a href="https://wa.me/584144997735">Haz Click!</a>
+              </h2>
+            </div>
+          </div>
+        </div>
+        <div class="grid grid-cols-12 gap-6">
+          <div class="col-span-12 sm:col-span-6">
+            <p class="copy-left-text">
+              Template by
+              <a href="https://themeforest.net/user/creativepersonal/portfolio"
+                >Creative Personal®</a
+              >
+            </p>
+          </div>
+          <div class="col-span-12 sm:col-span-6">
+            <p class="copy-right-text">&copy; Copyright 2024</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- / END FOOTER DESIGN AREA -->
+
+    <!-- JQUERY JS -->
+    <script src="./assets/js/jquery-3.6.0.min.js"></script>
+
+    <!-- APPEAR JS -->
+    <script src="./assets/js/appear.min.js"></script>
+    <!-- MAGNIFICANT JS -->
+    <script src="./assets/js/jquery.magnific-popup.min.js"></script>
+    <!-- MOBILE MENU JS-->
+    <script src="./assets/js/mobilemenu.js"></script>
+    <!-- GSAP AND LOCOMOTIV JS-->
+    <script src="./assets/js/gsap.min.js"></script>
+    <script src="./assets/js/ScrollTrigger.min.js"></script>
+    <script src="./assets/js/lenis.js"></script>
+    <!-- SWIPPER JS-->
+    <script src="./assets/js/swiper-bundle.js"></script>
+    <!-- NICE SELECT JS-->
+    <script src="./assets/js/jquery.nice-select.min.js"></script>
+    <!-- IMAGE LOADER JS-->
+    <script src="./assets/js/imagesloaded.pkgd.min.js"></script>
+    <!-- ISOTOPE JS-->
+    <script src="./assets/js/isotope.pkgd.min.js"></script>
+    <!--  WOW ANIMATION JS-->
+    <script src="./assets/js/wow.min.js"></script>
+    <!-- SCRIPT JS-->
+    <script src="./assets/js/script.js"></script>
+  <script defer src="index.js"></script></body>
+</html>

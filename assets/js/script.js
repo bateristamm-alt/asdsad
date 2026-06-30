@@ -390,21 +390,58 @@ Version      : 1.0
 
   // Function for ENVIO DE CORREO
   
-function SendMail() {
-    var params = {
-        from_name : document.getElementById("#name").value,
-        email_id : document.getElementById("#email").value,
-        message : document.getElementById("#message").value
-        
-    }
+// Esperamos a que todo el HTML de la página esté cargado
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("contactForm");
 
-    emailjs.send("service_mtbitlt", "template_l0khixm", params).then(function (res) {
-        alert("Success! " + res.status);
-    })
-}
+    // Escuchamos el evento de envío (submit) del formulario
+    form.addEventListener("submit", function (event) {
+        // Evitamos que la página se recargue automáticamente
+        event.preventDefault();
+
+        // Recogemos los datos usando los IDs exactos de tu formulario
+        var params = {
+            from_name: document.getElementById("name").value,
+            email_id: document.getElementById("email").value,
+            subject: document.getElementById("subject").value,
+            message: document.getElementById("message").value
+        };
+
+        // Cambia aquí tus IDs reales de EmailJS
+        const serviceID = "service_mtbitlt"; // Tu ID de servicio
+        const templateID = "template_l0khixm"; // Tu ID de plantilla
+
+        // Cambiar el texto del botón temporalmente para dar feedback visual
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalBtnText = submitBtn.innerHTML;
+        submitBtn.innerHTML = 'Enviando... <i class="ri-loader-line animate-spin"></i>';
+        submitBtn.disabled = true;
+
+        // Enviamos el correo usando EmailJS
+        emailjs.send(serviceID, templateID, params)
+            .then(function (res) {
+                // Si sale bien, mostramos una alerta de éxito
+                alert("¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.");
+                form.reset(); // Limpiamos los campos del formulario
+            })
+            .catch(function (error) {
+                // Si ocurre un error, lo registramos en consola y avisamos al usuario
+                console.error("EmailJS Error:", error);
+                alert("Hubo un problema al enviar tu mensaje. Por favor, inténtalo de nuevo.");
+            })
+            .finally(function () {
+                // Restauramos el botón a su estado original pase lo que pase
+                submitBtn.innerHTML = originalBtnText;
+                submitBtn.disabled = false;
+            });
+    });
+});
 
 
 
+
+
+ // fin del codigo
 
 
 

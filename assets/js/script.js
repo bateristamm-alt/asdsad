@@ -11,7 +11,7 @@ Version      : 1.0
 
   /*
    * ----------------------------------------------------------------------------------------
-   *  SWIPER JS
+   * SWIPER JS
    * ----------------------------------------------------------------------------------------
    */
   var postboxSlider = new Swiper(".postbox__slider", {
@@ -27,27 +27,17 @@ Version      : 1.0
       prevEl: ".postbox-slider-button-prev",
     },
     breakpoints: {
-      1200: {
-        slidesPerView: 1,
-      },
-      992: {
-        slidesPerView: 1,
-      },
-      768: {
-        slidesPerView: 1,
-      },
-      576: {
-        slidesPerView: 1,
-      },
-      0: {
-        slidesPerView: 1,
-      },
+      1200: { slidesPerView: 1 },
+      992: { slidesPerView: 1 },
+      768: { slidesPerView: 1 },
+      576: { slidesPerView: 1 },
+      0: { slidesPerView: 1 },
     },
   });
 
   /*
    * ----------------------------------------------------------------------------------------
-   *  EXTRA JS
+   * EXTRA JS
    * ----------------------------------------------------------------------------------------
    */
   if ($(".counter-text-wrap").length) {
@@ -62,9 +52,7 @@ Version      : 1.0
           $({
             countNum: $t.find(".count-text").text(),
           }).animate(
-            {
-              countNum: n,
-            },
+            { countNum: n },
             {
               duration: r,
               easing: "linear",
@@ -74,21 +62,13 @@ Version      : 1.0
               complete: function () {
                 $t.find(".count-text").text(this.countNum);
               },
-            },
+            }
           );
         }
       },
-      {
-        accY: 0,
-      },
+      { accY: 0 }
     );
   }
-
-  /*
-   * ----------------------------------------------------------------------------------------
-   *  EXTRA JS
-   * ----------------------------------------------------------------------------------------
-   */
 
   $("#mobile-menu").meanmenu({
     meanMenuContainer: ".mobile-menu",
@@ -101,7 +81,7 @@ Version      : 1.0
     function () {
       $(".sidebar__area").removeClass("sidebar-opened");
       $(".body-overlay").removeClass("opened");
-    },
+    }
   );
 
   $(".sidebar-toggle-btn").on("click", function () {
@@ -120,30 +100,20 @@ Version      : 1.0
 
   /*
    * ----------------------------------------------------------------------------------------
-   *  MAGNIFIC POPUP JS
+   * MAGNIFIC POPUP JS
    * ----------------------------------------------------------------------------------------
    */
-
   var magnifPopup = function () {
     $(".work-popup").magnificPopup({
       type: "image",
       removalDelay: 300,
       mainClass: "mfp-with-zoom",
-      gallery: {
-        enabled: true,
-      },
+      gallery: { enabled: true },
       zoom: {
-        enabled: false, // By default it's false, so don't forget to enable it
-
-        duration: 300, // duration of the effect, in milliseconds
-        easing: "ease-in-out", // CSS transition easing function
-
-        // The "opener" function should return the element from which popup will be zoomed in
-        // and to which popup will be scaled down
-        // By defailt it looks for an image tag:
+        enabled: false,
+        duration: 300,
+        easing: "ease-in-out",
         opener: function (openerElement) {
-          // openerElement is the element on which popup was initialized, in this case its <a> tag
-          // you don't need to add "opener" option if this code matches your needs, it's defailt one.
           return openerElement.is("img")
             ? openerElement
             : openerElement.find("img");
@@ -158,20 +128,17 @@ Version      : 1.0
         mainClass: "mfp-fade",
         removalDelay: 160,
         preloader: false,
-
         fixedContentPos: false,
-      },
+      }
     );
   };
-  // Call the functions
   magnifPopup();
 
   /*
    * ----------------------------------------------------------------------------------------
-   *  SCROOL TO UP JS
+   * SCROOL TO UP JS
    * ----------------------------------------------------------------------------------------
    */
-
   var progressPath = document.querySelector(".progress-wrap path");
   var pathLength = progressPath.getTotalLength();
   progressPath.style.transition = progressPath.style.WebkitTransition = "none";
@@ -200,38 +167,25 @@ Version      : 1.0
   });
   jQuery(".progress-wrap").on("click", function (event) {
     event.preventDefault();
-    jQuery("html, body").animate(
-      {
-        scrollTop: 0,
-      },
-      duration,
-    );
+    jQuery("html, body").animate({ scrollTop: 0 }, duration);
     return false;
   });
 
   /* ==========================================================================
-                       SCROLLER ANIMATION
-    ========================================================================== */
-
+   * SCROLLER ANIMATION
+   * ========================================================================== */
   const scrollers = document.querySelectorAll(".scroller");
 
-  // If a user hasn't opted in for recuded motion, then we add the animation
   if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     addAnimation();
   }
 
   function addAnimation() {
     scrollers.forEach((scroller) => {
-      // add data-animated="true" to every `.scroller` on the page
       scroller.setAttribute("data-animated", true);
-
-      // Make an array from the elements within `.scroller-inner`
       const scrollerInner = scroller.querySelector(".scroller__inner");
       const scrollerContent = Array.from(scrollerInner.children);
 
-      // For each item in the array, clone it
-      // add aria-hidden to it
-      // add it into the `.scroller-inner`
       scrollerContent.forEach((item) => {
         const duplicatedItem = item.cloneNode(true);
         duplicatedItem.setAttribute("aria-hidden", true);
@@ -242,10 +196,9 @@ Version      : 1.0
 
   /*
    * ----------------------------------------------------------------------------------------
-   *  SMOTH SCROOL JS
+   * SMOTH SCROOL JS
    * ----------------------------------------------------------------------------------------
    */
-
   function scrollNav() {
     $(".onepage li a").click(function () {
       $(".onepage li a.active").removeClass("active");
@@ -254,10 +207,8 @@ Version      : 1.0
       $("html, body")
         .stop()
         .animate(
-          {
-            scrollTop: $($(this).attr("href")).offset().top - 100,
-          },
-          1000,
+          { scrollTop: $($(this).attr("href")).offset().top - 100 },
+          1000
         );
       return false;
     });
@@ -266,17 +217,15 @@ Version      : 1.0
 
   /*
    * ----------------------------------------------------------------------------------------
-   *  Lenis JS
+   * Lenis JS
    * ----------------------------------------------------------------------------------------
    */
   const lenis = new Lenis();
-
   lenis.on("scroll", ScrollTrigger.update);
 
   gsap.ticker.add((time) => {
     lenis.raf(time * 1000);
   });
-
   gsap.ticker.lagSmoothing(0);
 
   // ## Testimonials Active
@@ -296,9 +245,7 @@ Version      : 1.0
       responsive: [
         {
           breakpoint: 767,
-          settings: {
-            slidesToShow: 1,
-          },
+          settings: { slidesToShow: 1 },
         },
       ],
     });
@@ -314,9 +261,7 @@ Version      : 1.0
       $(".project-masonry-active").isotope({
         itemSelector: ".item",
         filter: selector,
-        masonry: {
-          columnWidth: ".item",
-        },
+        masonry: { columnWidth: ".item" },
       });
     });
   });
@@ -327,127 +272,75 @@ Version      : 1.0
   // ## WOW Animation
   if ($(".wow").length) {
     var wow = new WOW({
-      boxClass: "wow", // animated element css class (default is wow)
-      animateClass: "animated", // animation css class (default is animated)
-      offset: 0, // distance to the element when triggering the animation (default is 0)
-      mobile: false, // trigger animations on mobile devices (default is true)
-      live: true, // act on asynchronously loaded content (default is true)
+      boxClass: "wow",
+      animateClass: "animated",
+      offset: 0,
+      mobile: false,
+      live: true,
     });
     wow.init();
   }
 
   /*
    * ----------------------------------------------------------------------------------------
-   *  AJAX CONTACT JS
+   * INTEGRACIÓN UNIFICADA DE EMAILJS (MIGUEL ARCILA)
    * ----------------------------------------------------------------------------------------
    */
-
-  // Function for DIRECCION DE CORREO validation
-  function isValidEmail(emailAddress) {
-    var pattern = new RegExp(
-      /^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i,
-    );
-
-    return pattern.test(emailAddress);
-  }
   $("#contactForm").on("submit", function (e) {
     e.preventDefault();
-    var data = {
-      name: $("#name").val(),
-      email: $("#email").val(),
+
+    // Verificamos si la librería cargó correctamente desde el HTML
+    if (typeof emailjs === "undefined") {
+      alert("Error: La librería de EmailJS no se ha cargado en el HTML. Revisa la etiqueta <script> al final de tu HTML.");
+      return false;
+    }
+
+    var $form = $(this);
+    var $submitBtn = $form.find('button[type="submit"]');
+    var originalBtnText = $submitBtn.innerHTML || $submitBtn.html();
+
+    // Recogemos los parámetros para EmailJS usando los IDs exactos de tu HTML
+    var params = {
+      from_name: $("#name").val(),
+      email_id: $("#email").val(),
       subject: $("#subject").val(),
-      message: $("#message").val(),
+      message: $("#message").val()
     };
 
-    if (
-      isValidEmail(data["email"]) &&
-      data["message"].length > 1 &&
-      data["name"].length > 1 &&
-      data["subject"].length > 1
-    ) {
-      $.ajax({
-        type: "POST",
-        url: "sendmail.php",
-        data: data,
-        success: function () {
-          $("#contactForm .input-success").delay(500).fadeIn(1000);
-          $("#contactForm .input-error").fadeOut(500);
-        },
+    // IDs de EmailJS provistos por el usuario
+    const serviceID = "service_mtbitlt"; 
+    const templateID = "template_l0khixm"; 
+
+    // Estado visual de carga nativo
+    $submitBtn.html('Enviando... <i class="ri-loader-line animate-spin"></i>').prop('disabled', true);
+    $form.find(".input-success, .input-error").fadeOut(200);
+
+    // Envío del correo electrónico
+    emailjs.send(serviceID, templateID, params)
+      .then(function (res) {
+        // Éxito: limpia formulario y muestra texto nativo
+        $form.find(".input-success").delay(200).fadeIn(1000);
+        $form[0].reset(); 
+      })
+      .catch(function (error) {
+        // Error: registra detalles y muestra texto nativo de error
+        console.error("EmailJS Error:", error);
+        $form.find(".input-error").delay(200).fadeIn(1000);
+      })
+      .finally(function () {
+        // Restablecemos el botón siempre
+        $submitBtn.html(originalBtnText).prop('disabled', false);
       });
-    } else {
-      $("#contactForm .input-error").delay(500).fadeIn(1000);
-      $("#contactForm .input-success").fadeOut(500);
-    }
 
     return false;
   });
 
   /*
    * ----------------------------------------------------------------------------------------
-   *  CREADO POR MI AMG ENVIO DE CORREO
+   * HEADER & ANIMACIONES DE CARGA
    * ----------------------------------------------------------------------------------------
    */
-
-  // Function for ENVIO DE CORREO
-  
-// Esperamos a que todo el HTML de la página esté cargado
-document.addEventListener("DOMContentLoaded", function () {
-    const form = document.getElementById("contactForm");
-
-    // Escuchamos el evento de envío (submit) del formulario
-    form.addEventListener("submit", function (event) {
-        // Evitamos que la página se recargue automáticamente
-        event.preventDefault();
-
-        // Recogemos los datos usando los IDs exactos de tu formulario
-        var params = {
-            from_name: document.getElementById("name").value,
-            email_id: document.getElementById("email").value,
-            subject: document.getElementById("subject").value,
-            message: document.getElementById("message").value
-        };
-
-        // Cambia aquí tus IDs reales de EmailJS
-        const serviceID = "service_mtbitlt"; // Tu ID de servicio
-        const templateID = "template_l0khixm"; // Tu ID de plantilla
-
-        // Cambiar el texto del botón temporalmente para dar feedback visual
-        const submitBtn = form.querySelector('button[type="submit"]');
-        const originalBtnText = submitBtn.innerHTML;
-        submitBtn.innerHTML = 'Enviando... <i class="ri-loader-line animate-spin"></i>';
-        submitBtn.disabled = true;
-
-        // Enviamos el correo usando EmailJS
-        emailjs.send(serviceID, templateID, params)
-            .then(function (res) {
-                // Si sale bien, mostramos una alerta de éxito
-                alert("¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.");
-                form.reset(); // Limpiamos los campos del formulario
-            })
-            .catch(function (error) {
-                // Si ocurre un error, lo registramos en consola y avisamos al usuario
-                console.error("EmailJS Error:", error);
-                alert("Hubo un problema al enviar tu mensaje. Por favor, inténtalo de nuevo.");
-            })
-            .finally(function () {
-                // Restauramos el botón a su estado original pase lo que pase
-                submitBtn.innerHTML = originalBtnText;
-                submitBtn.disabled = false;
-            });
-    });
-});
-
-
-
-
-
- // fin del codigo
-
-
-
-
   $(window).on("scroll", function () {
-    // ## Header Style and Scroll to Top
     function headerStyle() {
       if ($(".main-header").length) {
         var windowpos = $(window).scrollTop();
@@ -462,13 +355,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       }
     }
-
     headerStyle();
   });
-
-  /* ==========================================================================
-       When document is loaded, do
-       ========================================================================== */
 
   $(window).on("load", function () {
     const svg = document.getElementById("preloaderSvg");
@@ -490,56 +378,47 @@ document.addEventListener("DOMContentLoaded", function () {
       attr: { d: flat },
       ease: "power2.easeOut",
     });
-    tl.to(".preloader", {
-      y: -1500,
-    });
-    tl.to(".preloader", {
-      zIndex: -1,
-      display: "none",
-    });
+    tl.to(".preloader", { y: -1500 });
+    tl.to(".preloader", { zIndex: -1, display: "none" });
   });
 
   /*
    * ----------------------------------------------------------------------------------------
-   *  CUSTOM CURSOR JS
+   * CUSTOM CURSOR JS
    * ----------------------------------------------------------------------------------------
    */
   const cursorBall = document.getElementById("ball");
 
   document.addEventListener("mousemove", function (e) {
-    // Update cursor position and opacity on mousemove
     gsap.to(cursorBall, {
       duration: 0.3,
       x: e.clientX,
       y: e.clientY,
-      opacity: 1, // Ensure cursor is visible
+      opacity: 1,
       ease: "power2.out",
     });
   });
 
-  // Hover effect on elements
   const hoverElements = document.querySelectorAll("a");
   hoverElements.forEach(function (element) {
     element.addEventListener("mouseenter", function () {
-      // Animate cursorBall on mouseenter
       cursorBall.classList.add("hovered");
       gsap.to(cursorBall, {
         duration: 0.3,
-        scale: 2, // Increase scale
-        opacity: 0, // Set opacity to 0
+        scale: 2,
+        opacity: 0,
         ease: 0.1,
       });
     });
 
     element.addEventListener("mouseleave", function () {
-      // Restore cursorBall on mouseleave
       cursorBall.classList.remove("hovered");
       gsap.to(cursorBall, {
         duration: 0.3,
-        scale: 1, // Restore scale to normal
-        opacity: 1, // Restore opacity
+        scale: 1,
+        opacity: 1,
         ease: "power2.out",
       });
     });
   });
-})(jQuery); // End jQuery
+})(jQuery);

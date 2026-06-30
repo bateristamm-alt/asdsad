@@ -258,7 +258,7 @@
           </div>
           <!-- START CONTACT FORM DESIGN AREA -->
 
-          
+
           <div class="col-span-12 lg:col-span-8">
             <div class="contact-form contact-form-area wow fadeInUp delay-0-4s">
               <form
@@ -420,5 +420,15 @@
     <script src="assets/js/wow.min.js"></script>
     <!-- SCRIPT JS-->
     <script src="assets/js/script.js"></script>
-  <script defer src="index.js"></script></body>
+    <script defer src="index.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+      // 2. Inicializamos con tu clave pública real
+      // (Búscala en tu panel de EmailJS -> Account -> Public Key)
+      emailjs.init({
+        publicKey: "hInyFJm54OqCZHtDV", 
+      });
+    </script>
+
+</body>
 </html>

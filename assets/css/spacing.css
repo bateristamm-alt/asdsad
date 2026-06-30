@@ -1,7 +1,7 @@
 /*
 * ----------------------------------------------------------------------------------------
-Author       : Tanvir Hossain
-Template Name: Nino - Premium Portfolio Template
+Author       : Miguel Arcila
+Template Name: Arcangelmg - Portfolio
 Version      : 1.0                                          
 * ----------------------------------------------------------------------------------------
 */

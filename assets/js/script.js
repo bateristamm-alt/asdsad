@@ -382,9 +382,32 @@ Version      : 1.0
     return false;
   });
 
-  /* ==========================================================================
-       When document is scroll, do
-       ========================================================================== */
+  /*
+   * ----------------------------------------------------------------------------------------
+   *  CREADO POR MI AMG ENVIO DE CORREO
+   * ----------------------------------------------------------------------------------------
+   */
+
+  // Function for ENVIO DE CORREO
+  
+function SendMail() {
+    var params = {
+        from_name : document.getElementById("#name").value,
+        email_id : document.getElementById("#email").value,
+        message : document.getElementById("#message").value
+        
+    }
+
+    emailjs.send("service_mtbitlt", "template_l0khixm", params).then(function (res) {
+        alert("Success! " + res.status);
+    })
+}
+
+
+
+
+
+
 
   $(window).on("scroll", function () {
     // ## Header Style and Scroll to Top

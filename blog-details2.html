@@ -205,6 +205,34 @@
 
                 <!-- INICIO DE SLIDESHOW DE IMÁGENES -->
 
+                <!-- Estilos para flechas negras con fondo circular blanco -->
+                <style>
+                  .blog-slideshow .swiper-button-next,
+                  .blog-slideshow .swiper-button-prev {
+                    color: #000000 !important; /* Color negro para la flecha */
+                    background-color: #ffffff; /* Fondo blanco */
+                    width: 42px;               /* Ancho del círculo */
+                    height: 42px;              /* Alto del círculo */
+                    border-radius: 50%;        /* Forma circular perfecta */
+                    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25); /* Sombra suave para dar relieve */
+                    transition: all 0.3s ease;
+                  }
+
+                  /* Efecto hover opcional para mejorar la interacción */
+                  .blog-slideshow .swiper-button-next:hover,
+                  .blog-slideshow .swiper-button-prev:hover {
+                    background-color: #f0f0f0;
+                    transform: scale(1.08);
+                  }
+
+                  /* Ajustar el tamaño del icono de la flecha dentro del círculo */
+                  .blog-slideshow .swiper-button-next::after,
+                  .blog-slideshow .swiper-button-prev::after {
+                    font-size: 18px !important;
+                    font-weight: bold;
+                  }
+                </style>
+
                 <div class="postbox__img m-img mt-50 mb-[45px]">
                   <!-- Swiper Container -->
                   <div class="swiper blog-slideshow relative overflow-hidden rounded-xl">
@@ -293,8 +321,8 @@
                     </div>
 
                     <!-- Botones de navegación -->
-                    <div class="swiper-button-next !text-white"></div>
-                    <div class="swiper-button-prev !text-white"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
 
                     <!-- Paginación -->
                     <div class="swiper-pagination"></div>

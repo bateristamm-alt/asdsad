@@ -37,77 +37,88 @@
     <link rel="stylesheet" href="assets/css/style.css" />
     <link href="style.css" rel="stylesheet" />
 
-    <!-- ESTILOS CORREGIDOS PARA SLIDESHOW Y BORDES REDONDEADOS -->
+    <!-- ESTILOS CORREGIDOS DEFINITIVOS -->
     <style>
-  /* Contenedor principal del carrusel */
-  .blog-slideshow {
-    border-radius: 20px !important;
-    overflow: hidden !important;
-    position: relative;
-    background-color: transparent; /* Fondo transparente para evitar esquinas cuadradas negras */
-  }
+      /* Contenedor principal del carrusel */
+      .blog-slideshow {
+        border-radius: 20px !important;
+        overflow: hidden !important;
+        position: relative;
+        background-color: transparent !important;
+        /* Forzar recorte por GPU para evitar fugas con zoom en navegador */
+        clip-path: inset(0 round 20px) !important;
+        -webkit-clip-path: inset(0 round 20px) !important;
+        isolation: isolate;
+        transform: translateZ(0); /* Forzado de renderizado GPU */
+        width: 100%;
+      }
 
-  .blog-slideshow .swiper-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: transparent; /* Sin fondo negro en la diapositiva */
-    overflow: hidden;
-    border-radius: 20px;
-  }
+      .blog-slideshow .swiper-slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: transparent !important;
+        overflow: hidden !important;
+        border-radius: 20px !important;
+        clip-path: inset(0 round 20px) !important;
+        -webkit-clip-path: inset(0 round 20px) !important;
+      }
 
-  .blog-slideshow .swiper-slide img {
-    border-radius: 20px !important;
-    width: 100%;
-    max-height: 80vh;
-    object-fit: contain;
-    /* Evita artefactos visuales y bordes negros fantasma al escalar */
-    display: block; 
-  }
+      .blog-slideshow .swiper-slide img {
+        border-radius: 20px !important;
+        width: 100%;
+        height: auto;
+        max-height: 75vh;
+        object-fit: contain;
+        display: block;
+        /* Garantiza que la imagen respete los bordes al escalar */
+        clip-path: inset(0 round 20px) !important;
+        -webkit-clip-path: inset(0 round 20px) !important;
+      }
 
-  /* Botones de navegación */
-  .blog-slideshow .swiper-button-next,
-  .blog-slideshow .swiper-button-prev {
-    color: #000000 !important;
-    background-color: #ffffff;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
-    z-index: 50 !important;
-    cursor: pointer !important;
-  }
+      /* Botones de navegación */
+      .blog-slideshow .swiper-button-next,
+      .blog-slideshow .swiper-button-prev {
+        color: #000000 !important;
+        background-color: #ffffff;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
+        z-index: 50 !important;
+        cursor: pointer !important;
+      }
 
-  .blog-slideshow .swiper-button-next:hover,
-  .blog-slideshow .swiper-button-prev:hover {
-    background-color: #f0f0f0;
-    transform: scale(1.1);
-  }
+      .blog-slideshow .swiper-button-next:hover,
+      .blog-slideshow .swiper-button-prev:hover {
+        background-color: #f0f0f0;
+        transform: scale(1.1);
+      }
 
-  .blog-slideshow .swiper-button-next::after,
-  .blog-slideshow .swiper-button-prev::after {
-    font-size: 18px !important;
-    font-weight: bold;
-  }
+      .blog-slideshow .swiper-button-next::after,
+      .blog-slideshow .swiper-button-prev::after {
+        font-size: 18px !important;
+        font-weight: bold;
+      }
 
-  /* Paginación por puntos */
-  .blog-slideshow .swiper-pagination {
-    z-index: 50 !important;
-  }
+      /* Paginación por puntos */
+      .blog-slideshow .swiper-pagination {
+        z-index: 50 !important;
+      }
 
-  .blog-slideshow .swiper-pagination-bullet {
-    background: #ffffff;
-    opacity: 0.6;
-  }
+      .blog-slideshow .swiper-pagination-bullet {
+        background: #ffffff;
+        opacity: 0.6;
+      }
 
-  .blog-slideshow .swiper-pagination-bullet-active {
-    background: #ffffff;
-    opacity: 1;
-    width: 20px;
-    border-radius: 8px;
-  }
-</style>
+      .blog-slideshow .swiper-pagination-bullet-active {
+        background: #ffffff;
+        opacity: 1;
+        width: 20px;
+        border-radius: 8px;
+      }
+    </style>
   </head>
 
   <body class="overflow-x-hidden bg-bodyBackground font-normal text-greyBg">

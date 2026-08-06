@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="assets/css/mobilemenu.css" />
     <!-- SLICK CSS -->
     <link rel="stylesheet" href="assets/css/slick.min.css" />
-    <!-- SWIPPER CSS (AÑADIDO PARA EL SLIDESHOW) -->
+    <!-- SWIPER CSS (NECESARIO PARA EL DISEÑO Y NAVEGACIÓN) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <!-- SPACING CSS -->
     <link rel="stylesheet" href="assets/css/spacing.css" />
@@ -37,46 +37,69 @@
     <link rel="stylesheet" href="assets/css/style.css" />
     <link href="style.css" rel="stylesheet" />
 
-    <!-- ESTILOS PERSONALIZADOS PARA EL SLIDESHOW -->
+    <!-- ESTILOS CORREGIDOS PARA SLIDESHOW Y BORDES REDONDEADOS -->
     <style>
-      .blog-slideshow .swiper-slide img {
-        border-radius: 16px;
-        width: 100%;
-        max-height: 80vh; /* Evita que fotos muy altas rompan la pantalla */
-        object-fit: contain; /* Cambiado a contain para que fotos verticales no se corten */
+      /* Contenedor principal del carrusel */
+      .blog-slideshow {
+        border-radius: 20px !important; /* Aplica los bordes redondeados */
+        overflow: hidden !important;   /* Forzado para recortar todo el contenido interno */
+        position: relative;
       }
 
+      .blog-slideshow .swiper-slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #000000;
+      }
+
+      .blog-slideshow .swiper-slide img {
+        border-radius: 20px;
+        width: 100%;
+        max-height: 80vh;
+        object-fit: contain;
+      }
+
+      /* Botones de navegación con Z-INDEX elevado para recibir clics */
       .blog-slideshow .swiper-button-next,
       .blog-slideshow .swiper-button-prev {
         color: #000000 !important;
         background-color: #ffffff;
-        width: 42px;
-        height: 42px;
+        width: 45px;
+        height: 45px;
         border-radius: 50%;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
         transition: all 0.3s ease;
+        z-index: 50 !important; /* Eleva los botones sobre las capas transparentes del Fade */
+        cursor: pointer !important;
       }
 
       .blog-slideshow .swiper-button-next:hover,
       .blog-slideshow .swiper-button-prev:hover {
         background-color: #f0f0f0;
-        transform: scale(1.08);
+        transform: scale(1.1);
       }
 
       .blog-slideshow .swiper-button-next::after,
       .blog-slideshow .swiper-button-prev::after {
-        font-size: 16px !important;
+        font-size: 18px !important;
         font-weight: bold;
+      }
+
+      /* Paginación por puntos */
+      .blog-slideshow .swiper-pagination {
+        z-index: 50 !important;
       }
 
       .blog-slideshow .swiper-pagination-bullet {
         background: #ffffff;
         opacity: 0.6;
       }
+
       .blog-slideshow .swiper-pagination-bullet-active {
         background: #ffffff;
         opacity: 1;
-        width: 18px;
+        width: 20px;
         border-radius: 8px;
       }
     </style>
@@ -182,13 +205,13 @@
       </div>
     </section>
 
-    <!-- GALERÍA CENTRADA -->
+    <!-- SECCIÓN DE GALERÍA -->
     <div class="single-project-page-design bg-blackColor py-10">
       <div class="container mx-auto px-4">
         
-        <!-- Contenedor principal de la Galería -->
+        <!-- Contenedor del Carrusel -->
         <div class="postbox__img m-img mb-[45px]">
-          <div class="swiper blog-slideshow relative overflow-hidden rounded-2xl">
+          <div class="swiper blog-slideshow">
             <div class="swiper-wrapper">
               <div class="swiper-slide"><img src="https://lh3.googleusercontent.com/d/1uYTACcsmY_L4qp3oTUq9ljNn4Ac9VNVs" alt="Imagen 1" /></div>
               <div class="swiper-slide"><img src="https://lh3.googleusercontent.com/d/1YL43kD6EeLJ9-VMO68aZETghgE1jTCRK" alt="Imagen 2" /></div>
@@ -223,7 +246,7 @@
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
 
-            <!-- Paginación -->
+            <!-- Paginación por puntos -->
             <div class="swiper-pagination"></div>
           </div>
 
@@ -270,21 +293,23 @@
     <script src="assets/js/gsap.min.js"></script>
     <script src="assets/js/ScrollTrigger.min.js"></script>
     <script src="assets/js/lenis.js"></script>
-    <!-- SWIPPER JS (Cargado localmente o vía CDN) -->
-    <script src="assets/js/swiper-bundle.js"></script>
+    
+    <!-- SWIPER JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
     <script src="assets/js/jquery.nice-select.min.js"></script>
     <script src="assets/js/imagesloaded.pkgd.min.js"></script>
     <script src="assets/js/isotope.pkgd.min.js"></script>
     <script src="assets/js/wow.min.js"></script>
     <script src="assets/js/script.js"></script>
 
-    <!-- INICIALIZACIÓN DE SWIPER -->
+    <!-- INICIALIZACIÓN DE SWIPER CORREGIDA -->
     <script>
       document.addEventListener('DOMContentLoaded', function () {
         if (typeof Swiper !== 'undefined') {
-          new Swiper('.blog-slideshow', {
+          const swiper = new Swiper('.blog-slideshow', {
             slidesPerView: 1,
-            spaceBetween: 10,
+            spaceBetween: 0,
             loop: true,
             effect: 'fade',
             fadeEffect: {
@@ -295,14 +320,16 @@
               disableOnInteraction: false,
             },
             navigation: {
-              nextEl: '.swiper-button-next',
-              prevEl: '.swiper-button-prev',
+              nextEl: '.blog-slideshow .swiper-button-next',
+              prevEl: '.blog-slideshow .swiper-button-prev',
             },
             pagination: {
-              el: '.swiper-pagination',
+              el: '.blog-slideshow .swiper-pagination',
               clickable: true,
               dynamicBullets: true
             },
+            observer: true,
+            observeParents: true
           });
         }
       });

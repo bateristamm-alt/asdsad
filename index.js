@@ -76,4 +76,110 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css
 /******/ 	var __webpack_exports__ = __webpack_require__("./src/assets/js/index.js");
 /******/ 	
 /******/ })()
-;
+
+
+// Carga la API iFrame de YouTube dinámicamente
+if (!window.YT) {
+  const tag = document.createElement('script');
+  tag.src = "https://www.youtube.com/iframe_api";
+  const firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+}
+
+// Se ejecuta automáticamente cuando la API de YouTube está lista
+function onYouTubeIframeAPIReady() {
+  const iframes = document.querySelectorAll('.reel-yt-player');
+  
+  iframes.forEach((iframe) => {
+    const maxTime = parseFloat(iframe.dataset.end) || 15;
+    
+    const player = new YT.Player(iframe, {
+      events: {
+        'onReady': (event) => {
+          event.target.mute();
+          event.target.playVideo();
+        },
+        'onStateChange': (event) => {
+          // Si el video finaliza por completo, reiniciar
+          if (event.data === YT.PlayerState.ENDED) {
+            event.target.seekTo(0);
+            event.target.playVideo();
+          }
+        }
+      }
+    });
+
+    // Monitorea la reproducción para hacer bucle exactamente a los 15 segundos
+    setInterval(() => {
+      if (player && player.getCurrentTime) {
+        const currentTime = player.getCurrentTime();
+        if (currentTime >= maxTime) {
+          player.seekTo(0);
+          player.playVideo();
+        }
+      }
+    }, 250);
+  });
+}
+
+// Inicializar la cinta infinita (Carrusel)
+function initReel(wrapId, trackId, speed, dir) {
+  const wrap = document.getElementById(wrapId);
+  const track = document.getElementById(trackId);
+  if (!wrap || !track) return;
+
+  const originals = Array.from(track.children);
+  originals.forEach(s => {
+    const clone = s.cloneNode(true);
+    track.appendChild(clone);
+  });
+
+  let setWidth = 0, offset = 0, lastTime = null, paused = false;
+
+  function measure() {
+    setWidth = originals.reduce((sum, s) => sum + s.offsetWidth + 16, 0);
+    if (dir > 0 && offset === 0) offset = setWidth;
+  }
+  measure();
+  window.addEventListener('resize', measure);
+
+  function tick(t) {
+    if (lastTime === null) lastTime = t;
+    const dt = (t - lastTime) / 1000;
+    lastTime = t;
+
+    if (!paused && setWidth) {
+      offset += (dir > 0 ? -1 : 1) * speed * dt;
+      if (offset >= setWidth) offset -= setWidth;
+      if (offset <= 0 && dir > 0) offset += setWidth;
+      track.style.transform = `translateX(-${offset}px)`;
+    }
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+
+  wrap.addEventListener('mouseenter', () => paused = true);
+  wrap.addEventListener('mouseleave', () => paused = false);
+}
+
+// Abrir Modal Lightbox con el ID del video
+function openVideoLightbox(youtubeId) {
+  const lb = document.getElementById('videoLightbox');
+  const iframe = document.getElementById('lightboxIframe');
+
+  iframe.src = `https://www.youtube.com/embed/${youtubeId}?autoplay=1&controls=1`;
+  lb.classList.add('open');
+}
+
+// Cerrar Modal Lightbox
+function closeVideoLightbox() {
+  const lb = document.getElementById('videoLightbox');
+  const iframe = document.getElementById('lightboxIframe');
+
+  lb.classList.remove('open');
+  iframe.src = '';
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  initReel('reelWrap', 'reelTrack', 26, -1);
+});

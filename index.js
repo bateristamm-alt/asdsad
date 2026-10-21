@@ -77,60 +77,23 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css
 /******/ 	
 /******/ })()
 
-
-// Carga la API iFrame de YouTube dinámicamente
-if (!window.YT) {
-  const tag = document.createElement('script');
-  tag.src = "https://www.youtube.com/iframe_api";
-  const firstScriptTag = document.getElementsByTagName('script')[0];
-  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-}
-
-// Se ejecuta automáticamente cuando la API de YouTube está lista
-function onYouTubeIframeAPIReady() {
-  const iframes = document.querySelectorAll('.reel-yt-player');
-  
-  iframes.forEach((iframe) => {
-    const maxTime = parseFloat(iframe.dataset.end) || 15;
-    
-    const player = new YT.Player(iframe, {
-      events: {
-        'onReady': (event) => {
-          event.target.mute();
-          event.target.playVideo();
-        },
-        'onStateChange': (event) => {
-          // Si el video finaliza por completo, reiniciar
-          if (event.data === YT.PlayerState.ENDED) {
-            event.target.seekTo(0);
-            event.target.playVideo();
-          }
-        }
-      }
-    });
-
-    // Monitorea la reproducción para hacer bucle exactamente a los 15 segundos
-    setInterval(() => {
-      if (player && player.getCurrentTime) {
-        const currentTime = player.getCurrentTime();
-        if (currentTime >= maxTime) {
-          player.seekTo(0);
-          player.playVideo();
-        }
-      }
-    }, 250);
-  });
-}
-
-// Inicializar la cinta infinita (Carrusel)
 function initReel(wrapId, trackId, speed, dir) {
   const wrap = document.getElementById(wrapId);
   const track = document.getElementById(trackId);
   if (!wrap || !track) return;
 
+  // Duplicar tarjetas para cinta infinita
   const originals = Array.from(track.children);
   originals.forEach(s => {
     const clone = s.cloneNode(true);
+    const ov = s.querySelector('video'), cv = clone.querySelector('video');
+    [ov, cv].forEach(x => {
+      if (x) {
+        x.muted = true;
+        x.defaultMuted = true;
+        x.setAttribute('playsinline', '');
+      }
+    });
     track.appendChild(clone);
   });
 
@@ -160,9 +123,45 @@ function initReel(wrapId, trackId, speed, dir) {
 
   wrap.addEventListener('mouseenter', () => paused = true);
   wrap.addEventListener('mouseleave', () => paused = false);
+
+  // Optimización: Solo reproducir los videos visibles en pantalla (máximo 8 a la vez)
+  const MAX_PLAYING = 8;
+  function syncPlayback() {
+    const vh = window.innerHeight, vw = window.innerWidth, cx = vw / 2;
+    const wr = wrap.getBoundingClientRect();
+    const rowVisible = wr.bottom > -40 && wr.top < vh + 40;
+
+    const items = Array.from(track.querySelectorAll('video')).map(vid => {
+      const r = vid.getBoundingClientRect();
+      return {
+        vid,
+        on: rowVisible && r.right > -40 && r.left < vw + 40,
+        d: Math.abs((r.left + r.right) / 2 - cx)
+      };
+    });
+
+    items.filter(x => x.on).sort((a, b) => a.d - b.d).forEach((x, i) => {
+      x.on = i < MAX_PLAYING;
+    });
+
+    items.forEach(({ vid, on }) => {
+      if (on && vid.paused && vid.getAttribute('src')) {
+        vid.muted = true;
+        const p = vid.play();
+        if (p && p.catch) p.catch(() => {});
+      } else if (!on && !vid.paused) {
+        vid.pause();
+      }
+    });
+  }
+
+  setInterval(syncPlayback, 400);
+  ['scroll', 'touchstart', 'click'].forEach(ev =>
+    window.addEventListener(ev, syncPlayback, { passive: true })
+  );
 }
 
-// Abrir Modal Lightbox con el ID del video
+// Control de Lightbox (YouTube)
 function openVideoLightbox(youtubeId) {
   const lb = document.getElementById('videoLightbox');
   const iframe = document.getElementById('lightboxIframe');
@@ -171,7 +170,6 @@ function openVideoLightbox(youtubeId) {
   lb.classList.add('open');
 }
 
-// Cerrar Modal Lightbox
 function closeVideoLightbox() {
   const lb = document.getElementById('videoLightbox');
   const iframe = document.getElementById('lightboxIframe');
